@@ -6,6 +6,8 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -19,20 +21,34 @@
       </ul>
 
 
+      <i class="em em-some-emoji"></i>
+      <div>
+        <h2>Playlists</h2>
+        <button id="happy">Payday</button>
+        <button id="soulful">Vibes</button>
+        <button id="motivation">Motivate</button>
+        <button id="dance">Dance</button>
+        <button id="love">Feels</button>
+      </div>
+
       <h2>Songs</h2>
-        <div >
+        <div>
           <table>
-            <tr id="songs-header" class="rainbow-box">
-              <th>Title</th>
-              <th>Artist</th>
+            <tr id="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
               <th>BPM</th>
-              <th>Link</th>
+              <th>LINK</th>
+              <th></th>
             </tr>
-            <tr>
-                <th>In my feelings</th>
-                <th>Drake</th>
-                <th>91</th>
-                <th>www.spotify.com</th>
+            <tr id="song">
+              <form id="selected-song">
+                <th class="title" name="song[title]">In my feelings</th>
+                <th class="artist" name="song[artist]">Drake</th>
+                <th class="bpm" name="song[BPM]">91</th>
+                <th class="url" name="song[url]">www.spotify.com</th>
+                <th><input type="checkbox"></th>
+              </form>
               </tr>
           </table>
       </div>

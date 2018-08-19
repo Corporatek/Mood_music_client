@@ -13,7 +13,8 @@ _SpecRunner.html
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 # Thumbnails
 ._
 # Files that might appear in the root of a volume
@@ -99,6 +100,9 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Env file
+.env
 
 
 # End of https://www.gitignore.io/api/node
