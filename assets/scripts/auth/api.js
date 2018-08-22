@@ -45,9 +45,17 @@ const signout = function (data) {
   })
 }
 
+const getAllSongs = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/songs',
+    method: 'GET',
+  })
+}
+
 module.exports = {
     signup,
     signin,
     changePassword,
-    signout
+    signout,
+    getAllSongs
 }

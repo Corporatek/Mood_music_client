@@ -1,0 +1,30 @@
+{{#each songs as |song|}}
+  {{log song}}
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <tr data-id="{{song.id}}">
+   <td> {{#if song.title}}
+      {{song.title}}
+    {{else}}
+      No title provided.
+  {{/if}}  </td>
+   <td> {{#if song.artist}}
+      {{song.artist}}
+    {{else}}
+      No artist provided.
+  {{/if}}  </td>
+   <td> {{#if song.bpm}}
+      {{song.bpm}}
+    {{else}}
+      No bpm provided.
+  {{/if}}  </td>
+   <td> {{#if song.url}}
+      {{song.url}}
+    {{else}}
+      No url provided.
+  {{/if}}  </td>
+  
+
+{{/each}}

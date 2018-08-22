@@ -1,7 +1,28 @@
 'use strict'
-
+const showSongs = require('../templates/song-listing.handlebars')
 const store = require('../store.js')
 const api = require('./api')
+const modal = require('../modal')
+
+const getSongsSuccess = function (data) {
+ 
+  console.log(data)
+  // below takes the objects and turns them into html elements
+  const showSongsHtml = showSongs({ songs: data.songs})
+// below is the html for the add to playlist button
+  const addbtn = `<td><input id="addsongbtn" type="button" value="Add to a playlist"></td>`
+
+// below appends all songs to the songs table on the front end
+  $('tbody#song-table').append(`<tr>` + showSongsHtml + addbtn + `</tr>`)
+
+  
+}
+
+const getSongsFailure = function (error) {
+  $('#message').text('Error getting songs')
+  $('#message').css('background-color', 'red')
+  console.log('Songs failed to load')
+}
 
 
 
@@ -24,9 +45,7 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green').fadeOut(1500)
   $('#sign-up').css('display', 'none')
   $('#sign-in').css('display', 'none')
-  $('#sign-up-client').css('display', 'none')
-  $('.nav#change-pwd').css('display', 'block')
-  $('.nav#sign-out-box').css('display', 'block')  
+ 
 
   let userID = $('.user_barb_id')
   userID.val(data.user.id)
@@ -35,7 +54,6 @@ const signInSuccess = function (data) {
 
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
-//   var x = document.getElementById("game");
 //   var y = document.getElementById("sign-in");
 //   y.style.display = "none"
 //   x.style.display =  "block"
@@ -67,27 +85,7 @@ const signOutSuccess = function () {
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran.')
   $('#sign-out').css('display', 'none')
-  $('#user-type').css('display', 'block')
-  $('#view-appt').css('display', 'none')
-  $('#user-db').css('display', 'none')
-  $('#create-barber').css('display', 'none')
-  $('#barber-db').css('display', 'none')
-  $('#client-view').css('display', 'none')
-  $('#barber-info').css('display', 'none')
-  $('#barber-db').css('display', 'none')
-  $('#client-edit-appt').css('display', 'none')
-  $('.nav#change-pwd').css('display', 'none')
-  $('.nav#sign-out-box').css('display', 'none')
-  $('#create-barber').css('display', 'none')
-  $('#view-appt').css('display', 'none')
-
-
-
-
-
   // make all inputs clear with the following jquery funcion:
-
-
 
   store.user = null
 }
@@ -98,6 +96,8 @@ const signOutFailure = function (error) {
   console.log('signOutFailure ran. Error is :', error)
 }
 
+
+
 module.exports = {
     signUpSuccess,
     signUpFailure,
@@ -106,5 +106,7 @@ module.exports = {
     changePasswordSuccess,
     changePasswordFailure,
     signOutSuccess,
-    signOutFailure
+    signOutFailure,
+    getSongsSuccess,
+    getSongsFailure
 }

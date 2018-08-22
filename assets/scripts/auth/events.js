@@ -1,5 +1,6 @@
 'use strict'
 
+
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
@@ -49,11 +50,38 @@ const data = getFormFields(this)
     .catch(ui.signOutFailure)
 }
 
+const addToPlaylist = function (event) {
+  event.preventDefault()
+  console.log('Adding to Playlist...')
+
+const data = getFormFields(this)
+  console.log(data)
+  console.log('Hi')
+  // api.signout(data)
+  //   .then(ui.signOutSuccess)
+  //   .catch(ui.signOutFailure)
+}
+
+const getSongs = function (event) {
+  // event.preventDefault()
+  console.log('loading songs...')
+  
+const data = getFormFields(this)
+  console.log(data)
+  console.log('HI')
+
+    api.getAllSongs(data)
+      .then(ui.getSongsSuccess)
+      .catch(ui.getSongsFailure)
+}
+
 const addHandlers = () => {
     $('#sign-up').on('submit', onSignUp)
-    $('#sign-up-client').on('submit', onSignUp)
     $('#sign-in').on('submit', onSignIn)
+    $('#sign-out').on('submit', onSignOut)
     $('#change-password').on('submit', onChangePassword)
+    //playlist events below
+    $(document).ready(getSongs)
 }
 
 module.exports = {

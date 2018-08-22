@@ -6,8 +6,6 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -24,34 +22,123 @@
       <i class="em em-some-emoji"></i>
       <div>
         <h2>Playlists</h2>
-        <button id="happy">Payday</button>
-        <button id="soulful">Vibes</button>
-        <button id="motivation">Motivate</button>
-        <button id="dance">Dance</button>
-        <button id="love">Feels</button>
+        <button id="payday-playlist" type="submit">Payday</button>
+        <button id="vibes-playlist" type="submit">Vibes</button>
+        <button id="motivate-playlist" type="submit">Motivate</button>
+        <button id="dance-playlist" type="submit">Dance</button>
+        <button id="feels-playlist" type="submit">Feels</button>
+
+        <br>
+
+        <form>
+          <input type="text" name="song[title]" placeholder="title">
+          <input type="text" name="song[artist]" placeholder="artist">
+          <input type="text" name="song[bpm]" placeholder="bpm">
+          <input type="text" name="song[url]" placeholder="url">
+          <input id="playlist_id" type="text" name="song[playlist]" placeholder="playlist">
+        </form>
       </div>
 
       <h2>Songs</h2>
         <div>
           <table>
-            <tr id="songs-header">
+            <tbody id="song-table">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th>PLAYLIST++</th>
+            </tr>
+          
+            <tr class="song">
+              <form id="add-song">
+                <td id="title" type="text" name="song[title]" value="In my feelings">In my feelings</td>
+                <td id="artist" type="text" name="song[artist]">Drake</td>
+                <td id="bpm" type="integer" name="song[BPM]">91</td>
+                <td id="url" type="text" name="song[url]">www.spotify.com</td>
+                <td><input id="addsongbtn" type="button" value="Add to a playlist"></td>
+                </form>
+
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <h2>Payday Playlist</h2>
+        <div>
+          <table id="payday">
+            <tr class="songs-header">
               <th>TITLE</th>
               <th>ARTIST</th>
               <th>BPM</th>
               <th>LINK</th>
               <th></th>
             </tr>
-            <tr id="song">
-              <form id="selected-song">
-                <th class="title" name="song[title]">In my feelings</th>
-                <th class="artist" name="song[artist]">Drake</th>
-                <th class="bpm" name="song[BPM]">91</th>
-                <th class="url" name="song[url]">www.spotify.com</th>
-                <th><input type="checkbox"></th>
-              </form>
-              </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
           </table>
       </div>
+
+      <h2>Vibes Playlist</h2>
+        <div>
+          <table id="vibes">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th></th>
+            </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+          </table>
+      </div>
+
+      <h2>Motivate Playlist</h2>
+        <div>
+          <table id="motivate">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th></th>
+            </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+          </table>
+      </div>
+
+      <h2>Dance Playlist</h2>
+      <div>
+        <table id="dance">
+          <tr class="songs-header">
+            <th>TITLE</th>
+            <th>ARTIST</th>
+            <th>BPM</th>
+            <th>LINK</th>
+            <th></th>
+          </tr>
+          <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+        </table>
+    </div>
+
+    <h2>Feels Playlist</h2>
+    <div>
+      <table id="feels">
+        <tr class="songs-header">
+          <th>TITLE</th>
+          <th>ARTIST</th>
+          <th>BPM</th>
+          <th>LINK</th>
+          <th></th>
+        </tr>
+       <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+      </table>
+  </div>
 
     </body>
 </html>
