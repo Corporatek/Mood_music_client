@@ -44,6 +44,7 @@
           <table>
             <tbody id="song-table">
             <tr class="songs-header">
+              <th>SONG ID</th>
               <th>TITLE</th>
               <th>ARTIST</th>
               <th>BPM</th>
@@ -53,11 +54,12 @@
           
             <tr class="song">
               <form id="add-song">
+                <td>0</td> 
                 <td id="title" type="text" name="song[title]" value="In my feelings">In my feelings</td>
                 <td id="artist" type="text" name="song[artist]">Drake</td>
                 <td id="bpm" type="integer" name="song[BPM]">91</td>
                 <td id="url" type="text" name="song[url]">www.spotify.com</td>
-                <td><input id="addsongbtn" type="button" value="Add to a playlist"></td>
+                <td><input class="pl-btn" id="addsongbtn" type="button" value="Add to a playlist"></td>
                 </form>
 
               </tr>
@@ -139,6 +141,8 @@
          A CLASS OF "SONGS"-->
       </table>
   </div>
+
+  
 
     </body>
 </html>

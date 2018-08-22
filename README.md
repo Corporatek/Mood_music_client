@@ -50,3 +50,7 @@ STRETCH GOALS
 ===
 -Use a soundcloud or spotify api so users can play the song with the website.
 -Use React.js
+
+NOTES
+===
+Used store to hold data until ready to be passed.

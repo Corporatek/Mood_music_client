@@ -52,10 +52,18 @@ const getAllSongs = function (data) {
   })
 }
 
+const addSong = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/playlists',
+    method: 'POST',
+  })
+}
+
 module.exports = {
     signup,
     signin,
     changePassword,
     signout,
-    getAllSongs
+    getAllSongs,
+    addSong
 }

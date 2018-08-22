@@ -4,17 +4,26 @@ const store = require('../store.js')
 const api = require('./api')
 const modal = require('../modal')
 
+
+const addSongSuccess = function (data) {
+  console.log('Successfully add song to playlist', data)
+}
+
+const addSongFailure = function (error) {
+  console.log('failed to add song', error)
+}
+
 const getSongsSuccess = function (data) {
  
   console.log(data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = showSongs({ songs: data.songs})
+  const showSongsHtml = showSongs({songs: data.songs})
+
 // below is the html for the add to playlist button
-  const addbtn = `<td><input id="addsongbtn" type="button" value="Add to a playlist"></td>`
+  // const addbtn = `<td><input id="addsongbtn" type="button" value="Add to a playlist"></td>`
 
 // below appends all songs to the songs table on the front end
-  $('tbody#song-table').append(`<tr>` + showSongsHtml + addbtn + `</tr>`)
-
+  $('tbody#song-table').append(`<tr>` + showSongsHtml + `</tr>`)
   
 }
 
@@ -108,5 +117,7 @@ module.exports = {
     signOutSuccess,
     signOutFailure,
     getSongsSuccess,
-    getSongsFailure
+    getSongsFailure,
+    addSongFailure,
+    addSongSuccess
 }

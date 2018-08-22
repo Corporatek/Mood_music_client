@@ -23,8 +23,6 @@ class Modal {
         addToPlaylist.style = "margin-left: 90%;"
         contentContainer.append(addToPlaylist)
         // addToPlaylist.addEventListener('click', this.submit.bind(this))
-
-     
     }
 
     set html (value) {
@@ -41,25 +39,44 @@ class Modal {
     }
 }
 
+
 let i = 0,
 m = new Modal()
 
-document.getElementById('addsongbtn').addEventListener('click', () => {
-
-    const songTitle = document.querySelector('html body div table tbody#song-table tr.song td#title').innerHTML
-    const songArtist = document.querySelector('html body div table tbody#song-table tr.song td#artist').innerHTML
-    const songBPM = document.querySelector('html body div table tbody#song-table tr.song td#bpm').innerHTML
-    const songURL = document.querySelector('html body div table tbody#song-table tr.song td#url').innerHTML
+// var rows = document.getElementsByClassName('pl-btn')
 
 
+const ui = require('./auth/ui')
+
+console.log("here is the song: ", ui.song)
+
+$('table').on('click', '.pl-btn', (event) => {
+
+    console.log("the event is..", event.target)
+
+    var songID = $(event.target).closest('tr').find('td.id').html();
+    var songTitle = $(event.target).closest('tr').find('td.title').html();
+    var songArtist = $(event.target).closest('tr').find('td.artist').html();
+    var songBPM = $(event.target).closest('tr').find('td.bpm').html();
+    var songURL = $(event.target).closest('tr').find('td.bpm').html();
+
+
+    // this is form that will be created upon opening a modal for a song
+    var form = "<form> <input name="+"song[title]"+" value='"  + songTitle + "'>" + "<input id=" + "artist" + songID + " type="+"text"+ "name="+"song[artist]"+" value='" + songArtist +"'>" + "<input id="+"bpm" + songID + "type="+"integer"+ "name="+"song[BPM]"+ "value='" + songBPM + "'"+ "><input id="+"'url"+ songID +"' type="+"text"+" name="+"song[url]"+" value='"+ songURL +"'> </form>"
 
     // below is where music data will be appended
+    m.html = "<b>ADD TO PLAYLIST</b>" + "<br> <br>" + "<b>title - </b>" + songTitle + "<br>" + "<b>artist - </b>" + songArtist + "<br>"  + form
 
-    m.html = "<b>ADD TO PLAYLIST</b>" + "<br> <br>" + "<b>title - </b>" + songTitle + "<br>" + "<b>artist - </b>" + songArtist + "<br>" + "<b>bpm - </b>" + songBPM + "<br>" + "<b>url - </b>" + songURL + "<br><br>"
 
+
+    console.log(form)
     // this is the trigger that makes the button open a modal
+
     m.open()
 })
+
+
+
 
 // function openModal() {
 //     // below is where music data will be appended
@@ -67,5 +84,3 @@ document.getElementById('addsongbtn').addEventListener('click', () => {
 //     // this is the trigger that makes the button open a modal
 //     m.open()
 //   }
-
-module.export = Modal

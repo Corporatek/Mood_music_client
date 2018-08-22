@@ -75,6 +75,16 @@ const data = getFormFields(this)
       .catch(ui.getSongsFailure)
 }
 
+const songModal = function (event) {
+  event.preventDefault()
+  console.log('loading songs...')
+
+  api.addSong(data)
+      .then(ui.addSongSuccess)
+      .catch(ui.addSongFailure)
+  
+}
+
 const addHandlers = () => {
     $('#sign-up').on('submit', onSignUp)
     $('#sign-in').on('submit', onSignIn)
@@ -82,6 +92,7 @@ const addHandlers = () => {
     $('#change-password').on('submit', onChangePassword)
     //playlist events below
     $(document).ready(getSongs)
+    $('.pl-btn').on('click', songModal)
 }
 
 module.exports = {

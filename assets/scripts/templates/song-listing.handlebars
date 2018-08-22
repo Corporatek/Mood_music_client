@@ -5,26 +5,38 @@
 
  <!-- Developers, why are we using data-id and not just id? -->
   <tr data-id="{{song.id}}">
-   <td> {{#if song.title}}
+      <td class="song_id"> {{#if song.id}}
+      {{song.id}}
+    {{else}}
+      No id provided.
+  {{/if}}  </td>
+   <td class="title" value="{{song.title}}"> {{#if song.title}}
       {{song.title}}
     {{else}}
       No title provided.
   {{/if}}  </td>
-   <td> {{#if song.artist}}
+   <td class="artist"> {{#if song.artist}}
       {{song.artist}}
     {{else}}
       No artist provided.
   {{/if}}  </td>
-   <td> {{#if song.bpm}}
+   <td id="bpm"> {{#if song.bpm}}
       {{song.bpm}}
     {{else}}
       No bpm provided.
   {{/if}}  </td>
-   <td> {{#if song.url}}
+   <td id="url"> {{#if song.url}}
       {{song.url}}
     {{else}}
       No url provided.
   {{/if}}  </td>
-  
+
+  <td><input class="pl-btn" id="" type="button" data-toggle="modal" value="Add to a playlist"></td>
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
 
 {{/each}}
