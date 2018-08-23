@@ -17,7 +17,50 @@
         <li id="my-account" style="float:right;"><a>My Account</a></li>
         <li id="playlists" style="float:right;"><a>Playlists</a></li>
       </ul>
+<!-- USER RELATED BELOW HTML-->
+<div id="message"></div>
 
+      <form id="sign-up" class="signup" style="display: block;">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password_confirmation">
+            <!-- be sure to change 'display: none;' of the above element-->
+            <input type="submit" value="Sign Up!">
+
+          </fieldset>
+        </form>
+
+        <!--<button id="login">Sign In</button>-->
+  
+        <form id="sign-in" class="border" style="display: block;">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input id="email" type="text" name="credentials[email]" placeholder="Email">
+            <input id="password" type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+  
+        <form id="change-password" class="border" style="display: none;">
+          <fieldset>
+            <legend>Change Password!</legend>
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+  
+            <input type="submit" value="Change Password">
+          </fieldset>
+        </form>
+  
+        <form id="sign-out" class="border" style="display: none;">
+          <fieldset>
+            <legend>Sign Out</legend>
+            <input type="submit" value="Sign Out">
+          </fieldset>
+        </form>
+
+  <!--APP ELEMENTS BELOW-->
 
       <i class="em em-some-emoji"></i>
       <div>
@@ -90,7 +133,7 @@
               <th>ARTIST</th>
               <th>BPM</th>
               <th>LINK</th>
-              <th></th>
+              <th>EDIT</th>
             </tr>
             <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
          A CLASS OF "SONGS"-->

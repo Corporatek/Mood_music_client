@@ -45,7 +45,7 @@ const signout = function (data) {
   })
 }
 
-const getAllSongs = function (data) {
+const getAllSongs = function () {
   return $.ajax({
     url: config.apiUrl + '/songs',
     method: 'GET',
@@ -53,10 +53,62 @@ const getAllSongs = function (data) {
 }
 
 const addSong = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/playlists',
-    method: 'POST',
+    url: config.apiUrl + '/song/' + data.song.id,
+    method: 'PATCH',
+    data
   })
+}
+
+const pl1Songs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/playlists/' + 1,
+    method: 'GET',
+  })
+  
+}
+
+const pl2Songs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/playlists/' + 2,
+    method: 'GET',
+  })
+  
+}
+
+const pl3Songs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/playlists/' + 3,
+    method: 'GET',
+  })
+  
+}
+
+const pl4Songs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/playlists/' + 4,
+    method: 'GET',
+  })
+  
+}
+
+const pl5Songs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/playlists/' + 5,
+    method: 'GET',
+  })
+  
+}
+
+const deleteSong = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/song/' + data.song.id,
+    method: 'PATCH',
+    data
+  }),
+  alert("Song successfully deleted from playlist!")
+  
 }
 
 module.exports = {
@@ -65,5 +117,11 @@ module.exports = {
     changePassword,
     signout,
     getAllSongs,
-    addSong
+    addSong,
+    pl1Songs,
+    pl2Songs,
+    pl3Songs,
+    pl4Songs,
+    pl5Songs,
+    deleteSong
 }

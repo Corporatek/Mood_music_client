@@ -1,15 +1,10 @@
 {{#each songs as |song|}}
-  {{log song}}
+ {{log song}}
   <!-- {{> partial}}
   Don't uncomment yet -->
 
  <!-- Developers, why are we using data-id and not just id? -->
   <tr data-id="{{song.id}}">
-      <td class="song_id" value="{{song.id}}"> {{#if song.id}}
-      {{song.id}}
-    {{else}}
-      No id provided.
-  {{/if}}  </td>
    <td class="title" value="{{song.title}}"> {{#if song.title}}
       {{song.title}}
     {{else}}
@@ -31,7 +26,7 @@
       No url provided.
   {{/if}}  </td>
 
-  <td><input class="pl-btn" id="" type="button" data-toggle="modal" value="Add to a playlist"></td>
+  <td><input class="pl-delete-btn" id="" type="button" value="Delete"></td>
   <!-- Button trigger modal -->
 
 
