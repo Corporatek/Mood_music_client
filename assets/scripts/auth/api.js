@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 const main = require('../index')
 
-console.log("made it to api")
+// console.log("made it to api")
 
 const signup = function (data) {
   return $.ajax({

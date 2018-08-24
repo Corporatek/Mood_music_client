@@ -143,6 +143,11 @@ const signUpSuccess = function (data) {
   $('#message').css('background-color', 'green').fadeOut(1500)
   $('#sign-up').css('display', 'none')
   console.log('signUpSuccess ran. Data is :', data)
+  $('input#e').val("")
+  $('input#pw').val("")
+  $('input#pwc').val("")
+
+
   
 }
 
@@ -159,6 +164,7 @@ const signInSuccess = function (data) {
   $('#sign-in').css('display', 'none')
   $('input#email').val("")
   $('input#password').val("")
+  $('div#app').css('display', 'block')
 
 
  

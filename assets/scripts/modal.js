@@ -78,18 +78,18 @@ const ui = require('./auth/ui')
 const api = require('./auth/api')
 const store = require('./store')
 
-console.log("here is the song: ", ui.song)
+// console.log("here is the song: ", ui.song)
 
 // DELETE BUTTON
 $('table').on('click', '.pl-delete-btn', (event) => {
     event.preventDefault()
-    console.log('loading songs...')
+    console.log('deleteing song...')
   
     const ID = $(event.target).closest('tr').attr('data-id')
 
     store.playlist_id = null
 
-    console.log("TESINGNGGSGD: ", store.playlist_id)
+    // console.log("TESINGNGGSGD: ", store.playlist_id)
 
   
     var data = {
@@ -100,7 +100,7 @@ $('table').on('click', '.pl-delete-btn', (event) => {
       }
     }
   
-    console.log(data)
+    // console.log(data)
   
     api.deleteSong(data)
         .then(ui.deleteSongSuccess)
@@ -112,7 +112,7 @@ $('table').on('click', '.pl-delete-btn', (event) => {
 // OPEN MODAL BUTTON
 $('table').on('click', '.pl-btn', (event) => {
 
-    console.log("the event is..", event.target)
+    // console.log("the event is..", event.target)
 
     var songID = $(event.target).closest('tr').attr('data-id')
     var songTitle = $(event.target).closest('tr').find('td.title').html();
@@ -121,7 +121,7 @@ $('table').on('click', '.pl-btn', (event) => {
     var songURL = $(event.target).closest('tr').find('td.url').html();
 
     var URL = $(event.target).closest('tr').attr('src')
-    console.log('video url: ', URL)
+    // console.log('video url: ', URL)
    
     // below is where music data will be appended
     var html = "<b>ADD TO PLAYLIST</b>" + "<br> <br>" + "<b>song id - </b>" + songID + "<br>" + "<b>title - </b>" + songTitle + "<br>" + "<b>artist - </b>" + songArtist + "<br> <br>"
@@ -134,7 +134,7 @@ $('table').on('click', '.pl-btn', (event) => {
 
     store.id = songID
     
-    console.log("store object: ", store)
+    // console.log("store object: ", store)
 
 })
 
@@ -147,7 +147,7 @@ var playlistBtn = $(event.target).attr('value')
 
 // Append playlist id into an object that could be inputted into the json data object
 
-console.log(playlistBtn)
+// console.log(playlistBtn)
 
 
 const ID = store.id
@@ -163,7 +163,7 @@ var data = {
     }
 }
 
-console.log(data)
+// console.log(data)
 
 // BELOW SENDS THE DATA TO BE PATCHED. THE SONG WILL HAVE A NEW PLAYLIST ID. IT WILL BE AFFILIATED WITH THE PLAYLIST SELECTED
     addsong(data)

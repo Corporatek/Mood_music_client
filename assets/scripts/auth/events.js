@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 // const store = require('../store')
 
-console.log("events works")
+// console.log("events works")
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -56,7 +56,7 @@ const addToPlaylist = function (event) {
 
 const data = getFormFields(this)
   console.log(data)
-  console.log('Hi')
+  // console.log('Hi')
   // api.signout(data)
   //   .then(ui.signOutSuccess)
   //   .catch(ui.signOutFailure)
@@ -69,7 +69,7 @@ const getSongs = function (event) {
   
 const data = getFormFields(this)
   console.log(data)
-  console.log('HI')
+  // console.log('HI')
 
     api.getAllSongs(data)
       .then(ui.getSongsSuccess)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>MOOD MUSIC</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -23,9 +23,9 @@
       <form id="sign-up" class="signup" style="display: block;">
           <fieldset>
             <legend>Sign up!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Password_confirmation">
+            <input id="e" type="text" name="credentials[email]" placeholder="Email">
+            <input id="pw" type="password" name="credentials[password]" placeholder="Password">
+            <input id="pwc" type="password" name="credentials[password_confirmation]" placeholder="Password_confirmation">
             <!-- be sure to change 'display: none;' of the above element-->
             <input type="submit" value="Sign Up!">
 
@@ -61,7 +61,7 @@
         </form>
 
   <!--APP ELEMENTS BELOW-->
-<div id="app">
+<div id="app" style="display: none;">
       <i class="em em-some-emoji"></i>
       <div>
         <h2>Playlists</h2>
