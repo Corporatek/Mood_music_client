@@ -148,6 +148,62 @@ const addHandlers = () => {
     $('#sign-out').on('submit', onSignOut)
     $('#change-password').on('submit', onChangePassword)
     //playlist events below
+    $('#sign-out-btn').on('click', onSignOut)
+    $('#chng-pw-btn').on('click', onChangePassword, () => {
+      $('#change-password').css('display', 'block')
+      $('#app').css('display', 'none')
+    })
+
+    $('button#payday-playlist').on('click', playlist1Songs, () => {
+      $('#playlists-app').css('display', 'block')
+      $('div#1').css('display', 'block')
+      // HIDE BELOW
+      $('div#2').css('display', 'none')
+      $('div#3').css('display', 'none')
+      $('div#4').css('display', 'none')
+      $('div#5').css('display', 'none')
+    })
+
+    $('button#vibes-playlist').on('click', playlist2Songs, () => {
+      $('#playlists-app').css('display', 'block')
+      $('div#2').css('display', 'block')
+      // HIDE BELOW
+      $('div#1').css('display', 'none')
+      $('div#3').css('display', 'none')
+      $('div#4').css('display', 'none')
+      $('div#5').css('display', 'none')
+    })
+
+    $('button#motivate-playlist').on('click', playlist5Songs, () => {
+      $('#playlists-app').css('display', 'block')
+      $('div#5').css('display', 'block')
+      // HIDE BELOW
+      $('div#2').css('display', 'none')
+      $('div#3').css('display', 'none')
+      $('div#4').css('display', 'none')
+      $('div#1').css('display', 'none')
+    })
+
+    $('button#dance-playlist').on('click', playlist4Songs, () => {
+      $('#playlists-app').css('display', 'block')
+      $('div#4').css('display', 'block')
+      // HIDE BELOW
+      $('div#2').css('display', 'none')
+      $('div#3').css('display', 'none')
+      $('div#1').css('display', 'none')
+      $('div#5').css('display', 'none')
+    })
+
+    $('button#feels-playlist').on('click', playlist3Songs, () => {
+      $('#playlists-app').css('display', 'block')
+      $('div#3').css('display', 'block')
+      // HIDE BELOW
+      $('div#2').css('display', 'none')
+      $('div#1').css('display', 'none')
+      $('div#4').css('display', 'none')
+      $('div#5').css('display', 'none')
+    })
+
     $(document).ready(getSongs)
 
     // change the below to onclick functions so that users will be able to see updated
@@ -157,10 +213,6 @@ const addHandlers = () => {
     $(document).ready(playlist3Songs)
     $(document).ready(playlist4Songs)
     $(document).ready(playlist5Songs)
-
-
-
-
 
     $('.pl-btn').on('click', songModal)
 }

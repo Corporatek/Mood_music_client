@@ -14,8 +14,8 @@
     <body>
       <ul>
         <li><a href="default.asp">Mood Music</a></li>
-        <li id="my-account" style="float:right;"><a>My Account</a></li>
-        <li id="playlists" style="float:right;"><a>Playlists</a></li>
+        <li id="sign-out-btn" style="float:right;"><a>Sign Out</a></li>
+        <li id="chng-pw-btn" style="float:right;"><a>Change Password</a></li>
       </ul>
 <!-- USER RELATED BELOW HTML-->
 <div id="message"></div>
@@ -61,25 +61,16 @@
         </form>
 
   <!--APP ELEMENTS BELOW-->
-
+<div id="app">
       <i class="em em-some-emoji"></i>
       <div>
         <h2>Playlists</h2>
-        <button id="payday-playlist" type="submit">Payday</button>
-        <button id="vibes-playlist" type="submit">Vibes</button>
-        <button id="motivate-playlist" type="submit">Motivate</button>
-        <button id="dance-playlist" type="submit">Dance</button>
-        <button id="feels-playlist" type="submit">Feels</button>
+        <button id="payday-playlist" type="button">Payday</button>
+        <button id="vibes-playlist" type="button">Vibes</button>
+        <button id="feels-playlist" type="button">Feels</button>
+        <button id="dance-playlist" type="button">Dance</button>
+        <button id="motivate-playlist" type="button">Motivate</button>
 
-        <br>
-
-        <form>
-          <input type="text" name="song[title]" placeholder="title">
-          <input type="text" name="song[artist]" placeholder="artist">
-          <input type="text" name="song[bpm]" placeholder="bpm">
-          <input type="text" name="song[url]" placeholder="url">
-          <input id="playlist_id" type="text" name="song[playlist]" placeholder="playlist">
-        </form>
       </div>
 
       <h2>Songs</h2>
@@ -98,11 +89,11 @@
             <tr class="song">
               <form id="add-song">
                 <td>0</td> 
-                <td id="title" type="text" name="song[title]" value="In my feelings">In my feelings</td>
+                <td id="title" type="text" name="song[title]" value="In my feelings"><a id="song-title">In my feelings</a></td>
                 <td id="artist" type="text" name="song[artist]">Drake</td>
                 <td id="bpm" type="integer" name="song[BPM]">91</td>
                 <td id="url" type="text" name="song[url]">www.spotify.com</td>
-                <td><input class="pl-btn" id="addsongbtn" type="button" value="Add to a playlist"></td>
+                <td><input id="videoplayer" type="button" value="Watch Music Video"></td>
                 </form>
 
               </tr>
@@ -110,6 +101,9 @@
           </table>
       </div>
 
+      <!--PLAYLISTS START BELOW-->
+    <div id="playlists-app" style="display: none;">
+      <div id="1" style="display: none;">
       <h2>Payday Playlist</h2>
         <div>
           <table id="payday">
@@ -124,7 +118,9 @@
          A CLASS OF "SONGS"-->
           </table>
       </div>
+    </div>
 
+<div id="2" style="display: none;">
       <h2>Vibes Playlist</h2>
         <div>
           <table id="vibes">
@@ -139,7 +135,9 @@
          A CLASS OF "SONGS"-->
           </table>
       </div>
+</div>
 
+<div id="5" style="display: none;">
       <h2>Motivate Playlist</h2>
         <div>
           <table id="motivate">
@@ -154,7 +152,9 @@
          A CLASS OF "SONGS"-->
           </table>
       </div>
+</div>
 
+<div id="4" style="display: none;">
       <h2>Dance Playlist</h2>
       <div>
         <table id="dance">
@@ -169,7 +169,9 @@
          A CLASS OF "SONGS"-->
         </table>
     </div>
+  </div>
 
+  <div id="3" style="display: none;">
     <h2>Feels Playlist</h2>
     <div>
       <table id="feels">
@@ -184,8 +186,10 @@
          A CLASS OF "SONGS"-->
       </table>
   </div>
+</div>
+</div>
 
-  
+</div>
 
     </body>
 </html>

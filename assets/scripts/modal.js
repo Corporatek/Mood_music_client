@@ -119,10 +119,15 @@ $('table').on('click', '.pl-btn', (event) => {
     var songArtist = $(event.target).closest('tr').find('td.artist').html();
     var songBPM = $(event.target).closest('tr').find('td.bpm').html();
     var songURL = $(event.target).closest('tr').find('td.url').html();
+
+    var URL = $(event.target).closest('tr').attr('src')
+    console.log('video url: ', URL)
    
     // below is where music data will be appended
-    m.html = "<b>ADD TO PLAYLIST</b>" + "<br> <br>" + "<b>song id - </b>" + songID + "<br>" + "<b>title - </b>" + songTitle + "<br>" + "<b>artist - </b>" + songArtist + "<br> <br>"
-
+    var html = "<b>ADD TO PLAYLIST</b>" + "<br> <br>" + "<b>song id - </b>" + songID + "<br>" + "<b>title - </b>" + songTitle + "<br>" + "<b>artist - </b>" + songArtist + "<br> <br>"
+    var urlBeg = `<iframe width="560" height="315" src="`
+    var urlEnd = `?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`
+    m.html = html + urlBeg + URL + urlEnd
     // this is the trigger that makes the button open a modal
     m.open()
 

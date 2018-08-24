@@ -157,6 +157,10 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green').fadeOut(1500)
   $('#sign-up').css('display', 'none')
   $('#sign-in').css('display', 'none')
+  $('input#email').val("")
+  $('input#password').val("")
+
+
  
 
   let userID = $('.user_barb_id')
@@ -183,6 +187,7 @@ const changePasswordSuccess = function () {
   console.log('changePasswordSuccess ran and nothing was returned! ')
   $('#change-password').css('display', 'none')
   alert("Password successfully changed!")
+  $('#app').css('display', 'block')
 
 }
 
@@ -197,6 +202,10 @@ const signOutSuccess = function () {
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran.')
   $('#sign-out').css('display', 'none')
+  $("div#app").css('display', "none")
+  $('#sign-up').css('display', 'block')
+  $('#sign-in').css('display', 'block')
+
   // make all inputs clear with the following jquery funcion:
 
   store.user = null

@@ -4,7 +4,7 @@
   Don't uncomment yet -->
 
  <!-- Developers, why are we using data-id and not just id? -->
-  <tr data-id="{{song.id}}">
+  <tr data-id="{{song.id}}" src="{{song.url}}">
       <td class="song_id" value="{{song.id}}"> {{#if song.id}}
       {{song.id}}
     {{else}}
@@ -25,7 +25,7 @@
     {{else}}
       No bpm provided.
   {{/if}}  </td>
-   <td id="url"> {{#if song.url}}
+   <td id="url" value="{{song.url}}"> {{#if song.url}}
       {{song.url}}
     {{else}}
       No url provided.
