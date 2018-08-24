@@ -8,4 +8,11 @@
 
 $(() => {
   // your JS code goes here
+
+  const events = require('./auth/events.js')
+  const modal = require('./modal')
+
+  events.addHandlers()
+
+
 })

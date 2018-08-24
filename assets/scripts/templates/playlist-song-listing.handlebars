@@ -1,0 +1,37 @@
+{{#each songs as |song|}}
+ {{log song}}
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <tr data-id="{{song.id}}">
+   <td class="title" value="{{song.title}}"> {{#if song.title}}
+      {{song.title}}
+    {{else}}
+      No title provided.
+  {{/if}}  </td>
+   <td class="artist"> {{#if song.artist}}
+      {{song.artist}}
+    {{else}}
+      No artist provided.
+  {{/if}}  </td>
+   <td id="bpm"> {{#if song.bpm}}
+      {{song.bpm}}
+    {{else}}
+      No bpm provided.
+  {{/if}}  </td>
+   <td id="url" value="{{song.url}}"> {{#if song.url}}
+      {{song.url}}
+    {{else}}
+      No url provided.
+  {{/if}}  </td>
+
+  <td><input class="pl-delete-btn" id="" type="button" value="Delete"></td>
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+
+
+{{/each}}
