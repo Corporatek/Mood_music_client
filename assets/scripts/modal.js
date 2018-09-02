@@ -83,7 +83,7 @@ const store = require('./store')
 // DELETE BUTTON
 $('table').on('click', '.pl-delete-btn', (event) => {
     event.preventDefault()
-    console.log('deleteing song...')
+    console.log('deleteing song...', data)
   
     const ID = $(event.target).closest('tr').attr('data-id')
 
@@ -164,12 +164,18 @@ var data = {
 }
 
 // console.log(data)
-
+    
 // BELOW SENDS THE DATA TO BE PATCHED. THE SONG WILL HAVE A NEW PLAYLIST ID. IT WILL BE AFFILIATED WITH THE PLAYLIST SELECTED
+   
+var adding = function (data) {
     addsong(data)
         .then(ui.addSongSuccess)
         .catch(ui.addSongFailure)
+
+}
+adding(data)
 m.close()
+
     })
 
 

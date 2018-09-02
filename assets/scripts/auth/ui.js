@@ -36,9 +36,9 @@ const getSongsFailure = function (error) {
 
 const paydaySuccess = function (data) {
  
-  console.log(data)
+  console.log("it worked! ", data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = playlist1({songs: data.songs})
+  const showSongsHtml = playlist1({songs: data.playlist.songs})
 
 // below appends all songs to the songs table on the front end
   $('table#payday').append(`<tr>` + showSongsHtml + `</tr>`)
@@ -56,7 +56,7 @@ const vibesSuccess = function (data) {
  
   console.log(data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = playlist1({songs: data.songs})
+  const showSongsHtml = playlist1({songs: data.playlist.songs})
 // below appends all songs to the songs table on the front end
   $('table#vibes').append(`<tr>` + showSongsHtml + `</tr>`)
   
@@ -73,7 +73,7 @@ const feelsSuccess = function (data) {
  
   console.log(data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = playlist1({songs: data.songs})
+  const showSongsHtml = playlist1({songs: data.playlist.songs})
 
 // below appends all songs to the songs table on the front end
   $('table#feels').append(`<tr>` + showSongsHtml + `</tr>`)
@@ -90,7 +90,7 @@ const danceSuccess = function (data) {
  
   console.log(data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = playlist1({songs: data.songs})
+  const showSongsHtml = playlist1({songs: data.playlist.songs})
 // below appends all songs to the songs table on the front end
   $('table#dance').append(`<tr>` + showSongsHtml + `</tr>`)
   
@@ -106,7 +106,7 @@ const motivateSuccess = function (data) {
  
   console.log(data)
   // below takes the objects and turns them into html elements
-  const showSongsHtml = playlist1({songs: data.songs})
+  const showSongsHtml = playlist1({songs: data.playlist.songs})
 
 // below appends all songs to the songs table on the front end
   $('table#motivate').append(`<tr>` + showSongsHtml + `</tr>`)
