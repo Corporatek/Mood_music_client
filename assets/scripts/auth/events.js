@@ -140,6 +140,19 @@ const songModal = function (event) {
   
 }
 
+const newSong = function (event) {
+  event.preventDefault()
+  console.log('adding song to app...')
+
+  const data = getFormFields(this)
+
+  api.newSong(data)
+      .then(ui.newSongSuccess)
+      .catch(ui.newSongFailure)
+  
+}
+
+
 
 
 const addHandlers = () => {
@@ -153,6 +166,7 @@ const addHandlers = () => {
       $('#change-password').css('display', 'block')
       $('#app').css('display', 'none')
     })
+    $('#create-song').on('submit', newSong)
 
     $('button#payday-playlist').on('click', playlist1Songs, () => {
       $('#playlists-app').css('display', 'block')

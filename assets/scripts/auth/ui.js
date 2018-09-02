@@ -14,6 +14,19 @@ const addSongFailure = function (error) {
   console.log('failed to add song', error)
 }
 
+
+const newSongSuccess = function (data) {
+  $('#message').text('added song to app. refresh page').fadeOut(1500)
+  $('#message').css('background-color', 'green').fadeOut(1500)
+  $('form#create-song fieldset input.song-add').val("")
+
+  console.log('Successfully added song to app', data)
+}
+
+const newSongFailure = function (error) {
+  console.log('failed to add song', error)
+}
+
 const getSongsSuccess = function (data) {
  
   // below takes the objects and turns them into html elements
@@ -57,6 +70,7 @@ const vibesSuccess = function (data) {
   console.log(data)
   // below takes the objects and turns them into html elements
   const showSongsHtml = playlist1({songs: data.playlist.songs})
+
 // below appends all songs to the songs table on the front end
   $('table#vibes').append(`<tr>` + showSongsHtml + `</tr>`)
   
@@ -110,6 +124,7 @@ const motivateSuccess = function (data) {
 
 // below appends all songs to the songs table on the front end
   $('table#motivate').append(`<tr>` + showSongsHtml + `</tr>`)
+
   
 }
 
@@ -165,6 +180,8 @@ const signInSuccess = function (data) {
   $('input#email').val("")
   $('input#password').val("")
   $('div#app').css('display', 'block')
+  $('#create-song').css('display', 'block')
+
 
 
  
@@ -249,5 +266,7 @@ module.exports = {
     motivateFailure,
     motivateSuccess,
     deleteSongFailure,
-    deleteSongSuccess
+    deleteSongSuccess,
+    newSongFailure,
+    newSongSuccess
 }

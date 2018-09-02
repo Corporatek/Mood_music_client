@@ -70,9 +70,22 @@
         <button id="feels-playlist" type="button">Feels</button>
         <button id="dance-playlist" type="button">Dance</button>
         <button id="motivate-playlist" type="button">Motivate</button>
-
       </div>
+<!-- ADD NEW SONG FORM BELOW-->
+<br>
+<form id="create-song" style="display: none;">
+  <fieldset>
+    <!--<legend>Upload Song</legend>-->
+    <h2>Upload Song</h2>
+    <input class="song-add" type="text" name="song[title]" placeholder="song title">
+    <input class="song-add" type="text" name="song[artist]" placeholder="artist">
+    <input class="song-add" type="text" name="song[bpm]" placeholder="bpm">
+    <input class="song-add" type="text" name="song[url]" placeholder="youtube url">
+    <input type="submit" value="ADD">
+  </fieldset>
+</form>
 
+<!--SONGS START BELOW-->
       <h2>Songs</h2>
         <div>
           <table>

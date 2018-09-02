@@ -111,6 +111,14 @@ const deleteSong = function (data) {
   
 }
 
+const newSong = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/songs',
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
     signup,
     signin,
@@ -123,5 +131,6 @@ module.exports = {
     pl3Songs,
     pl4Songs,
     pl5Songs,
-    deleteSong
+    deleteSong,
+    newSong
 }
