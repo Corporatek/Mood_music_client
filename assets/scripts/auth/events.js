@@ -146,6 +146,10 @@ const newSong = function (event) {
 
   const data = getFormFields(this)
 
+  data.song.url = "https://www.youtube.com/embed/" + data.song.url
+
+  console.log(data)
+
   api.newSong(data)
       .then(ui.newSongSuccess)
       .catch(ui.newSongFailure)
