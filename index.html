@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>MOOD MUSIC</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <ul>
+        <li><a href="default.asp">Mood Music</a></li>
+        <li id="sign-out-btn" style="float:right;"><a>Sign Out</a></li>
+        <li id="chng-pw-btn" style="float:right;"><a>Change Password</a></li>
+      </ul>
+<!-- USER RELATED BELOW HTML-->
+<div id="message"></div>
+
+      <form id="sign-up" class="signup" style="display: block;">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <input id="e" type="text" name="credentials[email]" placeholder="Email">
+            <input id="pw" type="password" name="credentials[password]" placeholder="Password">
+            <input id="pwc" type="password" name="credentials[password_confirmation]" placeholder="Password_confirmation">
+            <!-- be sure to change 'display: none;' of the above element-->
+            <input type="submit" value="Sign Up!">
+
+          </fieldset>
+        </form>
+
+        <!--<button id="login">Sign In</button>-->
+  
+        <form id="sign-in" class="border" style="display: block;">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input id="email" type="text" name="credentials[email]" placeholder="Email">
+            <input id="password" type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+  
+        <form id="change-password" class="border" style="display: none;">
+          <fieldset>
+            <legend>Change Password!</legend>
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+  
+            <input type="submit" value="Change Password">
+          </fieldset>
+        </form>
+  
+        <form id="sign-out" class="border" style="display: none;">
+          <fieldset>
+            <legend>Sign Out</legend>
+            <input type="submit" value="Sign Out">
+          </fieldset>
+        </form>
+
+  <!--APP ELEMENTS BELOW-->
+<div id="app" style="display: none;">
+      <i class="em em-some-emoji"></i>
+      <div>
+        <h2>Playlists</h2>
+        <button id="payday-playlist" type="button">Payday</button>
+        <button id="vibes-playlist" type="button">Vibes</button>
+        <button id="feels-playlist" type="button">Feels</button>
+        <button id="dance-playlist" type="button">Dance</button>
+        <button id="motivate-playlist" type="button">Motivate</button>
+      </div>
+<!-- ADD NEW SONG FORM BELOW-->
+<br>
+<form id="create-song" style="display: none;">
+  <fieldset>
+    <!--<legend>Upload Song</legend>-->
+    <h2>Upload Song</h2>
+    <input class="song-add" type="text" name="song[title]" placeholder="song title">
+    <input class="song-add" type="text" name="song[artist]" placeholder="artist">
+    <input class="song-add" type="text" name="song[bpm]" placeholder="bpm">
+    <input class="song-add" type="text" name="song[url]" placeholder="youtube id">
+    <input type="submit" value="ADD">
+  </fieldset>
+</form>
+
+<!--SONGS START BELOW-->
+      <h2>Songs</h2>
+        <div>
+          <table>
+            <tbody id="song-table">
+            <tr class="songs-header">
+              <th>SONG ID</th>
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th>PLAYLIST++</th>
+            </tr>
+          
+            <tr class="song">
+              <form id="add-song">
+                <td>0</td> 
+                <td id="title" type="text" name="song[title]" value="In my feelings"><a id="song-title">In my feelings</a></td>
+                <td id="artist" type="text" name="song[artist]">Drake</td>
+                <td id="bpm" type="integer" name="song[BPM]">91</td>
+                <td id="url" type="text" name="song[url]">www.spotify.com</td>
+                <td><input id="videoplayer" type="button" value="Watch Music Video"></td>
+                </form>
+
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <!--PLAYLISTS START BELOW-->
+    <div id="playlists-app" style="display: none;">
+      <div id="1" style="display: none;">
+      <h2>Payday Playlist</h2>
+        <div>
+          <table id="payday">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th></th>
+            </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+          </table>
+      </div>
+    </div>
+
+<div id="2" style="display: none;">
+      <h2>Vibes Playlist</h2>
+        <div>
+          <table id="vibes">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th>EDIT</th>
+            </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+          </table>
+      </div>
+</div>
+
+<div id="5" style="display: none;">
+      <h2>Motivate Playlist</h2>
+        <div>
+          <table id="motivate">
+            <tr class="songs-header">
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>BPM</th>
+              <th>LINK</th>
+              <th></th>
+            </tr>
+            <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+          </table>
+      </div>
+</div>
+
+<div id="4" style="display: none;">
+      <h2>Dance Playlist</h2>
+      <div>
+        <table id="dance">
+          <tr class="songs-header">
+            <th>TITLE</th>
+            <th>ARTIST</th>
+            <th>BPM</th>
+            <th>LINK</th>
+            <th></th>
+          </tr>
+          <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+        </table>
+    </div>
+  </div>
+
+  <div id="3" style="display: none;">
+    <h2>Feels Playlist</h2>
+    <div>
+      <table id="feels">
+        <tr class="songs-header">
+          <th>TITLE</th>
+          <th>ARTIST</th>
+          <th>BPM</th>
+          <th>LINK</th>
+          <th></th>
+        </tr>
+       <!-- APPEND ADDED SONGS HERE. MAKE SURE THE <tr> HAS
+         A CLASS OF "SONGS"-->
+      </table>
+  </div>
+</div>
+</div>
+
+</div>
+
+    </body>
+</html>
