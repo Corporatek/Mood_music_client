@@ -24,7 +24,7 @@ const signin = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('date is ', data)
+  // console.log('date is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -53,7 +53,7 @@ const getAllSongs = function () {
 }
 
 const addSong = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/song/' + data.song.id,
     method: 'PATCH',

@@ -10,7 +10,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+  // console.log('sign up ran!')
 
 
   const data = getFormFields(this)
@@ -21,7 +21,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+  // console.log('sign in ran!')
 
 const data = getFormFields(this)
   api.signin(data)
@@ -31,7 +31,7 @@ const data = getFormFields(this)
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran')
+  //// console.log('change password ran')
 
   const data = getFormFields(this)
 
@@ -42,7 +42,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('signed out!')
+ //  // console.log('signed out!')
 
 const data = getFormFields(this)
   api.signout(data)
@@ -52,10 +52,10 @@ const data = getFormFields(this)
 
 const addToPlaylist = function (event) {
   event.preventDefault()
-  console.log('Adding to Playlist...')
+  // console.log('Adding to Playlist...')
 
 const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   // console.log('Hi')
   // api.signout(data)
   //   .then(ui.signOutSuccess)
@@ -65,10 +65,10 @@ const data = getFormFields(this)
 // APPEND ALL SONGS TO SONGS TABLE
 const getSongs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
   
 const data = getFormFields(this)
-  console.log(data)
+ // console.log(data)
   // console.log('HI')
 
     api.getAllSongs(data)
@@ -79,7 +79,7 @@ const data = getFormFields(this)
 // APPEND ALL SONGS THAT BELONG TO PLAYLIST WITH ID "1"
 const playlist1Songs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
     api.pl1Songs()
       .then(ui.paydaySuccess)
@@ -89,7 +89,7 @@ const playlist1Songs = function (event) {
 // APPEND ALL SONGS THAT BELONG TO PLAYLIST WITH ID "2"
 const playlist2Songs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
     api.pl2Songs()
       .then(ui.vibesSuccess)
@@ -100,7 +100,7 @@ const playlist2Songs = function (event) {
 
 const playlist3Songs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
     api.pl3Songs()
       .then(ui.feelsSuccess)
@@ -111,7 +111,7 @@ const playlist3Songs = function (event) {
 
 const playlist4Songs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
     api.pl4Songs()
       .then(ui.danceSuccess)
@@ -122,7 +122,7 @@ const playlist4Songs = function (event) {
 
 const playlist5Songs = function (event) {
   // event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
     api.pl5Songs()
       .then(ui.motivateSuccess)
@@ -132,7 +132,7 @@ const playlist5Songs = function (event) {
 
 const songModal = function (event) {
   event.preventDefault()
-  console.log('loading songs...')
+  // console.log('loading songs...')
 
   api.addSong(data)
       .then(ui.addSongSuccess)
@@ -142,13 +142,13 @@ const songModal = function (event) {
 
 const newSong = function (event) {
   event.preventDefault()
-  console.log('adding song to app...')
+  // console.log('adding song to app...')
 
   const data = getFormFields(this)
 
   data.song.url = "https://www.youtube.com/embed/" + data.song.url
 
-  console.log(data)
+  // console.log(data)
 
   api.newSong(data)
       .then(ui.newSongSuccess)
@@ -173,6 +173,7 @@ const addHandlers = () => {
     $('#create-song').on('submit', newSong)
 
     $('button#payday-playlist').on('click', playlist1Songs, () => {
+      $(document).ready(playlist1Songs)
       $('#playlists-app').css('display', 'block')
       $('div#1').css('display', 'block')
       // HIDE BELOW
@@ -183,6 +184,7 @@ const addHandlers = () => {
     })
 
     $('button#vibes-playlist').on('click', playlist2Songs, () => {
+      $(document).ready(playlist2Songs)
       $('#playlists-app').css('display', 'block')
       $('div#2').css('display', 'block')
       // HIDE BELOW
@@ -193,6 +195,7 @@ const addHandlers = () => {
     })
 
     $('button#motivate-playlist').on('click', playlist5Songs, () => {
+      $(document).ready(playlist5Songs)
       $('#playlists-app').css('display', 'block')
       $('div#5').css('display', 'block')
       // HIDE BELOW
@@ -203,6 +206,7 @@ const addHandlers = () => {
     })
 
     $('button#dance-playlist').on('click', playlist4Songs, () => {
+      $(document).ready(playlist4Songs)
       $('#playlists-app').css('display', 'block')
       $('div#4').css('display', 'block')
       // HIDE BELOW
@@ -213,6 +217,7 @@ const addHandlers = () => {
     })
 
     $('button#feels-playlist').on('click', playlist3Songs, () => {
+      $(document).ready(playlist3Songs)
       $('#playlists-app').css('display', 'block')
       $('div#3').css('display', 'block')
       // HIDE BELOW
@@ -226,11 +231,11 @@ const addHandlers = () => {
 
     // change the below to onclick functions so that users will be able to see updated
     // tables when they attempt to show a playlist
-    $(document).ready(playlist1Songs)
-    $(document).ready(playlist2Songs)
-    $(document).ready(playlist3Songs)
-    $(document).ready(playlist4Songs)
-    $(document).ready(playlist5Songs)
+    // $(document).ready(playlist1Songs)
+    // $(document).ready(playlist2Songs)
+    // $(document).ready(playlist3Songs)
+    // $(document).ready(playlist4Songs)
+    // $(document).ready(playlist5Songs)
 
     $('.pl-btn').on('click', songModal)
 }

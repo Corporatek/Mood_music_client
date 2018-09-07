@@ -83,7 +83,7 @@ const store = require('./store')
 // DELETE BUTTON
 $('table').on('click', '.pl-delete-btn', (event) => {
     event.preventDefault()
-    console.log('deleteing song...', data)
+    // console.log('deleteing song...', data)
   
     const ID = $(event.target).closest('tr').attr('data-id')
 
